@@ -1,0 +1,33 @@
+{
+  "name": "@whippy/e2e-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:ui": "playwright test src/tests/ui",
+    "test:api": "playwright test src/tests/api --workers=1",
+    "lint:fix": "eslint ./ --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint:spell": "cspell \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --no-progress",
+    "lint": "yarn lint:format && yarn lint:fix && yarn lint:spell",
+    "type": "tsc --pretty --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.35.1",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "cspell": "^6.31.3",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "typescript": "^5.1.6"
+  }
+}
